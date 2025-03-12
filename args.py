@@ -1,0 +1,31 @@
+import argparse
+
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--dataset', type=str, default='Cora')
+    parser.add_argument('--gpu', type=int, default=2)
+    parser.add_argument('--sup', type=bool, default=False)
+    parser.add_argument('--batch_size', type=int, default=256)
+    parser.add_argument('--way', type=int, default=5)
+    parser.add_argument('--shot', type=int, default=5)
+    parser.add_argument('--query', type=int, default=10)
+    parser.add_argument('--test_num', type=int, default=50)
+    parser.add_argument('--patience', type=int, default=10)
+    parser.add_argument('--drop_edge_rate_1', type=float, default=0.2)
+    parser.add_argument('--drop_edge_rate_2', type=float, default=0.4)
+    parser.add_argument('--drop_feature_rate_1', type=float, default=0.3)
+    parser.add_argument('--drop_feature_rate_2', type=float, default=0.4)
+    parser.add_argument('--alpha', type=float, default=1)
+    parser.add_argument('--num_heads', type=int, default=4)
+    parser.add_argument('--temperature', type=float, default=0.5)
+    parser.add_argument('--topk', type=int, default=20)
+    parser.add_argument('--beta', type=float, default=0.1)
+    parser.add_argument('--gamma', type=float, default=1)
+    parser.add_argument('--wd', type=float, default=1e-9)
+    parser.add_argument('--epoch', type=int, default=50)
+    parser.add_argument('--encoder', type=str, default='sgc')
+    parser.add_argument('--set_encoder', type=str, default='DeepSet')
+    parser.add_argument('--config', type=str, default='fs_config.yaml')
+    args = parser.parse_args()
+
+    return args
